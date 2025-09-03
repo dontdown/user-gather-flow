@@ -53,3 +53,27 @@ export const formatCEP = (value: string): string => {
 export const validateName = (name: string): boolean => {
   return name.trim().length >= 2;
 };
+
+export const validateTelefone = (telefone: string): boolean => {
+  const cleanTelefone = telefone.replace(/\D/g, '');
+  // Aceita telefones com 10 (fixo) ou 11 (celular) dígitos
+  return cleanTelefone.length === 10 || cleanTelefone.length === 11;
+};
+
+export const formatTelefone = (value: string): string => {
+  const cleanValue = value.replace(/\D/g, '');
+  
+  if (cleanValue.length <= 10) {
+    // Formato para telefone fixo: (11) 1234-5678
+    return cleanValue
+      .substring(0, 10)
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{4})(\d)/, '$1-$2');
+  } else {
+    // Formato para celular: (11) 91234-5678
+    return cleanValue
+      .substring(0, 11)
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2');
+  }
+};

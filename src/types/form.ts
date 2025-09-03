@@ -1,7 +1,14 @@
 export interface FormData {
   nomeCompleto: string;
   cpf: string;
+  telefone: string;
   cep: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  estado: string;
   estadoCivil: 'SOLTEIRO' | 'CASADO' | 'DIVORCIADO' | 'VIUVO' | 'UNIAO_ESTAVEL' | '';
   possuiFilhos: 'sim' | 'nao' | '';
   quantidadeFilhos?: number;
