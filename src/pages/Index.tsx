@@ -1,7 +1,7 @@
-import { MultiStepForm } from '@/components/MultiStepForm';
+import { SinglePageForm } from '@/components/SinglePageForm';
 
 const Index = () => {
-  return <MultiStepForm />;
+  return <SinglePageForm />;
 };
 
 export default Index;
